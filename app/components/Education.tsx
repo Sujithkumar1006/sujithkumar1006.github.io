@@ -5,7 +5,7 @@ const Education = () => {
   const [isHovered, setIsHovered] = useState([false, false]);
 
   const setHover = (index: number, val = true) => {
-    let newHoverState = Array(2).fill(false);
+    const newHoverState = Array(2).fill(false);
     newHoverState[index] = val;
     setIsHovered(newHoverState);
   };

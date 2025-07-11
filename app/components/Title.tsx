@@ -18,7 +18,7 @@ const Title = () => {
         priority // to preload it and avoid flash
       />
       <div>
-        <Heading>Hi, I'm Sujith Kumar Thankaraj</Heading>
+        <Heading>Hi, I&apos;m Sujith Kumar Thankaraj</Heading>
         <SubHeading>Full-Stack Software Engineer</SubHeading>
         <nav>
           <ButtonLink
