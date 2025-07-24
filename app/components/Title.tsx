@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Container, Heading, SubHeading, ButtonLink } from "./styled";
 
