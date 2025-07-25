@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import StyledComponentsRegistry from "./lib/registry"; // helper for styled-components SSR
 import { GlobalStyle } from "./globalStyles";
+import { ThemeProvider } from "./context/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 import "./globals.css";
 
 export const metadata = {
@@ -32,11 +34,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
       </head>
       <body>
         <StyledComponentsRegistry>
-          <GlobalStyle />
-          {children}
+          <ThemeProvider>
+            <GlobalStyle />
+            <ThemeToggle />
+            {children}
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
