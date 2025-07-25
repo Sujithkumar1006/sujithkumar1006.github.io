@@ -21,11 +21,11 @@ const projects = [
   },
   {
     key: "parserjs",
-    title: "C-like Parser & Lexer in JavaScript",
+    title: "C-like Parser & Lexer in JS",
     image: "/parser.png",
     githubLink: "https://github.com/Sujithkumar1006/parser",
     description:
-      "Built a parser and lexer in JavaScript that mimics C-style syntax, supporting tokenization and grammar parsing for expressions, loops, and conditionals as part of an academic compiler project.",
+      "Built a parser and lexer in JS that mimics C-style syntax, supporting tokenization and grammar parsing for expressions, loops, and conditionals as part of an academic compiler project.",
     techStack: "JavaScript, Regular Expressions, Compiler Theory",
   },
 ];
@@ -89,7 +89,8 @@ function ProjectCard({
             rel="noopener noreferrer"
             className="project-button"
           >
-            <i className="devicon-github-original"></i> GitHub
+            <i className="fab fa-github"></i>
+            GitHub
           </a>
         </div>
       </div>
