@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata = {
   title: "Sujith Kumar Thankaraj | Portfolio",
   description: "Full-Stack Software Engineer",
+  icons: {
+    icon: "./favico.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
