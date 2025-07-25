@@ -4,16 +4,16 @@ import { useTheme } from '../context/ThemeContext'
 
 const ThemeToggle: React.FC = () => {
   const { isDark, toggleTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  // const [mounted, setMounted]= React.useState(false)
 
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+  // React.useEffect(() => {
+  //   setMounted(true)
+  // }, [])
 
-  // Don't render until mounted to prevent hydration mismatch
-  if (!mounted) {
-    return null
-  }
+  // // Don't render until mounted to prevent hydration mismatch
+  // if (!mounted) {
+  //   return null
+  // }
 
   return (
     <button
