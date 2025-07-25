@@ -15,6 +15,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script
+          data-goatcounter="https://sthankaraj.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

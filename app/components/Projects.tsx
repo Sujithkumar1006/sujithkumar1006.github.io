@@ -74,7 +74,6 @@ function ProjectCard({
         className="project-thumbnail"
         width={300}
         height={200}
-        priority // to preload it and avoid flash
       />
 
       <div className="project-content">
