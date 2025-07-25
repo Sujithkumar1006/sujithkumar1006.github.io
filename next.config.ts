@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? '/sujithkumar1006.github.io' : '',
-  assetPrefix: isProd ? '/sujithkumar1006.github.io/' : '',
   trailingSlash: true,
 };
 
