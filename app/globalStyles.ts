@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     --tech-stack-border: #2c2c2c;
     --timeline-border: #ffffff;
     --timeline-dot: #ffffff;
+    --hover-description-color:rgb(241, 241, 231);
   }
 
   [data-theme="light"] {
