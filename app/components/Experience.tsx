@@ -4,6 +4,18 @@ import { useEffect } from "react";
 
 const experience = [
   {
+    role: "Software Engineer",
+    company: "Wein Law Firm",
+    location: "New York, United States",
+    period: "Nov 2025 - Present",
+    position: [
+     "First software engineering hire, working directly with the CTO to own and enhance an internal collections and recovery platform used by 10+ attorneys and paralegals across active cases",
+     "Improving a Rails and React application by refactoring data models, APIs and access controls, supporting dozens of concurrent cases within the firm",
+     "Consolidated 4 spreadsheet-based workflows into a centralized Rails platform, speeding up case handling and simplifying internal operations",
+     "Integrated third-party services, Google Document Processing (GDP) and LLM-based workflows into a Rails application, automating document generation and standardizing legal records"
+    ],
+  },
+  {
     role: "Senior Software Engineer",
     company: "Yubi (formerly CredAvenue)",
     location: "Chennai, India",
