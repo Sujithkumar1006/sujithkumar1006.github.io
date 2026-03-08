@@ -1,6 +1,20 @@
-import { CommonSection, ProjectSection } from "./styled";
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { CommonSection, ProjectSection } from "./styled";
+
 const projects = [
+  {
+    key: "export-invoice-generator",
+    title: "Export Sales Invoice Generator",
+    image: "/invoice-generator.png",
+    githubLink: "https://github.com/Sujithkumar1006/invoice-generator",
+    liveLink: "https://invoice-generator-mksq.onrender.com/",
+    description:
+      "Built a Rails web app that automates generating export sales invoices as PDFs / DOCX. Includes authentication, consignee and notify party master data, an invoice builder, automatic totals, and one-click PDF / DOCX download from a fixed business template.",
+    techStack: "Ruby on Rails, PostgreSQL, Prawn, Docker, Render",
+  },
   {
     key: "pingpong",
     title: "PingPong App",
@@ -31,21 +45,97 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const syncCardsPerView = () => {
+      if (window.innerWidth <= 768) {
+        setCardsPerView(1);
+        return;
+      }
+
+      if (window.innerWidth <= 1100) {
+        setCardsPerView(2);
+        return;
+      }
+
+      setCardsPerView(3);
+    };
+
+    syncCardsPerView();
+    window.addEventListener("resize", syncCardsPerView);
+
+    return () => window.removeEventListener("resize", syncCardsPerView);
+  }, []);
+
+  const maxIndex = Math.max(0, projects.length - cardsPerView);
+
+  useEffect(() => {
+    setCurrentIndex((index) => Math.min(index, maxIndex));
+  }, [maxIndex]);
+
   return (
     <CommonSection id="projects">
       <h2>Projects</h2>
       <ProjectSection>
-        {projects.map((p) => (
-          <li key={p.key}>
-            <ProjectCard
-              title={p.title}
-              description={p.description}
-              image={p.image}
-              githubLink={p.githubLink}
-              techStack={p.techStack}
+        <div className="project-slider-header">
+          <button
+            type="button"
+            className="project-slider-button"
+            onClick={() => setCurrentIndex((index) => Math.max(0, index - 1))}
+            disabled={currentIndex === 0}
+            aria-label="Previous project"
+          >
+            <i className="fas fa-chevron-left" />
+          </button>
+          <button
+            type="button"
+            className="project-slider-button"
+            onClick={() =>
+              setCurrentIndex((index) => Math.min(maxIndex, index + 1))
+            }
+            disabled={currentIndex === maxIndex}
+            aria-label="Next project"
+          >
+            <i className="fas fa-chevron-right" />
+          </button>
+        </div>
+        <div className="project-slider-viewport">
+          <ul
+            className="project-slider-track"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)`,
+            }}
+          >
+            {projects.map((p) => (
+              <li key={p.key} className="slider-slide">
+                <ProjectCard
+                  title={p.title}
+                  description={p.description}
+                  image={p.image}
+                  githubLink={p.githubLink}
+                  liveLink={p.liveLink}
+                  techStack={p.techStack}
+                  imageAlt={`${p.title} project screenshot`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="project-slider-dots" aria-label="Project slider pagination">
+          {Array.from({ length: maxIndex + 1 }, (_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`project-slider-dot ${
+                index === currentIndex ? "active" : ""
+              }`}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to project slide ${index + 1}`}
             />
-          </li>
-        ))}
+          ))}
+        </div>
       </ProjectSection>
     </CommonSection>
   );
@@ -56,7 +146,9 @@ interface IProjectCard {
   title: string;
   description: string;
   githubLink: string;
+  liveLink?: string;
   techStack: string;
+  imageAlt: string;
 }
 
 function ProjectCard({
@@ -64,13 +156,15 @@ function ProjectCard({
   title,
   description,
   githubLink,
+  liveLink,
   techStack,
+  imageAlt,
 }: IProjectCard) {
   return (
     <article className="project-card">
       <Image
         src={image}
-        alt="Project Screenshot"
+        alt={imageAlt}
         className="project-thumbnail"
         width={300}
         height={200}
@@ -82,6 +176,17 @@ function ProjectCard({
         <p className="project-tech">{techStack}</p>
 
         <div className="project-links">
+          {liveLink ? (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-button"
+            >
+              <i className="fas fa-arrow-up-right-from-square"></i>
+              Live
+            </a>
+          ) : null}
           <a
             href={githubLink}
             target="_blank"

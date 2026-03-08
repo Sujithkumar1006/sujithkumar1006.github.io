@@ -5,6 +5,17 @@ import { ThemeProvider } from "./context/ThemeContext";
 import ThemeToggle from "./components/ThemeToggle";
 import "./globals.css";
 
+const themeInitScript = `
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } catch (error) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  })();
+`;
+
 export const metadata = {
   title: "Sujith Kumar Thankaraj | Portfolio",
   description: "Full-Stack Software Engineer",
@@ -15,8 +26,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           data-goatcounter="https://sthankaraj.goatcounter.com/count"
           async

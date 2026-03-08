@@ -1,3 +1,5 @@
+"use client";
+
 import { CommonSection, EducationSection } from "./styled";
 import { useState } from "react";
 
@@ -53,6 +55,8 @@ const Education = () => {
                 <a
                   href="https://www.linkedin.com/in/sujith-kumart/"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
                   onMouseEnter={() => setHover(0)}
                   onMouseLeave={() => setHover(0, false)}
                 >
@@ -65,6 +69,8 @@ const Education = () => {
                 <a
                   href="https://github.com/sujithkumar1006"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
                   onMouseEnter={() => setHover(1)}
                   onMouseLeave={() => setHover(1, false)}
                 >

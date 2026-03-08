@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Next
 
-## Getting Started
+Personal portfolio site built with Next.js App Router, React, TypeScript, and `styled-components`.
 
-First, run the development server:
+## Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- styled-components
+
+## Project Structure
+
+- `app/page.tsx`: assembles the single-page portfolio
+- `app/layout.tsx`: root layout, metadata, external assets, theme wrapper
+- `app/components/`: section components such as About, Experience, Projects, and Education
+- `app/components/styled.ts`: primary UI styling
+- `app/globalStyles.ts`: theme-aware global styles
+- `app/context/ThemeContext.tsx`: dark/light theme state
+- `public/`: images, screenshots, favicon, and resume PDF
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run linting:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+Create the production static export build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Start the production server locally:
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Publish the exported site from `out/` with GitHub Pages:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run deploy
+```
+
+## Notes
+
+- The app uses `output: 'export'` in `next.config.ts`, so `next build` generates the static export.
+- Portfolio content is currently hardcoded in the section components under `app/components`.
+- Theme state is stored in `localStorage` and applied through a `data-theme` attribute on the root document.

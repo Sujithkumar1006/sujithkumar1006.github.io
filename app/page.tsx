@@ -1,4 +1,5 @@
 "use client";
+
 import Title from "./components/Title";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
