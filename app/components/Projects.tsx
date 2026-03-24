@@ -6,6 +6,15 @@ import { CommonSection, ProjectSection } from "./styled";
 
 const projects = [
   {
+    key: "signal-pr",
+    title: "Signal PR",
+    image: "/signal-pr.png",
+    githubLink: "https://github.com/Sujithkumar1006/signal_pr",
+    description:
+      "Built a GitHub App for Rails repositories that adds AI-powered pull request reviews. Signal PR can be installed on any Rails repo to analyze changes and help surface review feedback directly in the PR workflow.",
+    techStack: "Python, Fast API, GitHub App, AI PR Review, GitHub Webhooks",
+  },
+  {
     key: "export-invoice-generator",
     title: "Export Sales Invoice Generator",
     image: "/invoice-generator.png",
