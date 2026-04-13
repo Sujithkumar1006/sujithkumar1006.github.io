@@ -5,20 +5,29 @@ const About = () => {
     <CommonSection id="about">
       <h2>About me</h2>
       <AboutParagraph>
-        I’m Sujith Kumar Thankaraj, a Full-Stack Software Engineer with over
-        four years of experience building reliable, scalable and user-friendly
-        fintech applications. My expertise spans modern frontend technologies
-        like <b>React.js</b> and <b>TypeScript</b>, as well as backend
-        frameworks such as <b>Ruby on Rails</b> and <b>Node.js</b>. I’ve worked
-        on complex real-world systems, architecting RESTful APIs, implementing
-        caching strategies, integrating third-party services and delivering
-        features that directly enhance customer experience and business value.
+        I’m Sujith Kumar Thankaraj, a full-stack software engineer with 5+
+        years of experience building production systems across fintech,
+        internal business platforms and workflow-heavy applications. I work
+        across the stack with <b>React.js</b>, <b>TypeScript</b>,{" "}
+        <b>Ruby on Rails</b>, <b>Node.js</b> and cloud infrastructure, with a
+        strong focus on designing reliable APIs, improving performance and
+        turning manual operations into scalable software.
       </AboutParagraph>
       <AboutParagraph>
-        Currently, I’m pursuing my Master’s in Computer Science at Binghamton
-        University, focusing on system design, cloud computing and distributed
-        systems. I care deeply about accessibility, developer experience and
-        building products that make a real impact.
+        Over the course of my career, I’ve built banking integrations,
+        high-volume monitoring dashboards, data-intensive onboarding workflows,
+        internal legal operations tools and real-time collaboration products. I
+        enjoy owning features end to end, from architecture and backend systems
+        to frontend experiences, and I care about writing maintainable software
+        that delivers measurable impact for both users and the business.
+      </AboutParagraph>
+      <AboutParagraph>
+        I recently completed my Master’s in Computer Science at Binghamton
+        University, where I deepened my understanding of system design,
+        distributed systems and scalable application development. What drives me
+        most is building thoughtful products with clear outcomes, whether that
+        means reducing manual effort, improving reliability or helping teams
+        move faster with better tools.
       </AboutParagraph>
     </CommonSection>
   );
