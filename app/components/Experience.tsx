@@ -44,7 +44,7 @@ const experience = [
     ],
   },
   {
-    role: "Product Development Engineer Intern",
+    role: "Product Development Engineer",
     company: "CodingMart Technologies",
     location: "Remote",
     period: "Sep 2019 – Aug 2020",
